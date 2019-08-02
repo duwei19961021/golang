@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /*func main()  {
 	fmt.Println("hello word","duwei")
 }
@@ -55,14 +53,35 @@ func main()  {
 */
 
 //+号的使用
-func main() {
-	var i = 1
-	var j = 2
-	var r = i + j
+/*func main() {
+	var i int = 1
+	var j int = 2
+	var r int = i + j
 	fmt.Println(r) //加法运算
 
 	var str1 = "hello"
 	var str2 = "world"
 	var hw = str1 + str2
 	fmt.Println(hw) //字符串拼接
+	fmt.Println(true,false)
+}*/
+
+import "fmt"
+
+func main() {
+	//var i int8  = 10
+	//fmt.Println(i)
+	//var n1 = 1000000 //n1 是啥类型
+	//fmt.Printf("数据类型为：",n1)
+	//fmt.Printf("占用字节数为：",unsafe.Sizeof(n1))
+	//fmt.Printf("n1的数据类型为%T，占用字节数为%b",n1,unsafe.Sizeof(n1))
+	//编程中遵守保小不保大的原则。
+
+	//浮点型float,默认是float64。
+	//var n1 float32  = 2.55
+	//fmt.Printf("n1类型为%T",n1)
+
+	var n2 float32 = 3.14159165416516516516516516516516544544
+	var n3 float64 = 3.51654651616161
+	fmt.Println(n2, n3)
 }
