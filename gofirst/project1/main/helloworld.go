@@ -339,3 +339,36 @@ func main() {
 //	var a int = 1 << 2
 //	fmt.Println(a)
 //}
+
+//import "fmt"
+//
+//func main() {
+//	var age int = 18
+//	var ptr *int = &age
+//	fmt.Println(&age)
+//	fmt.Println(ptr)
+//	fmt.Println(*ptr)
+//	*ptr = 10
+//	fmt.Println(age)
+//}
+
+//import "fmt"
+//func main() {
+//	var ptr *int
+//	if ptr == nil {
+//		fmt.Println("ptr is null")
+//	}	else {
+//		fmt.Println("ptr is not null")
+//	}
+//}
+
+import "fmt"
+
+func main() {
+	var age int = 18
+	var ptr *int = &age
+	fmt.Println(ptr)
+	//*ptr++
+	fmt.Println(age, *ptr)
+	fmt.Println(ptr, &age)
+}
