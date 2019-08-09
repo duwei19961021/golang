@@ -363,338 +363,48 @@ func main() {
 //}
 
 //import "fmt"
-//
 //func main() {
 //	var age int = 18
 //	var ptr *int = &age
 //	fmt.Println(ptr)
-//	//*ptr++
+//	*ptr++
 //	fmt.Println(age, *ptr)
 //	fmt.Println(ptr, &age)
 //}
 
-//import "fmt"
-//
 //func main() {
-//	var age int
-//	fmt.Println("input your age:")
-//	fmt.Scanln(&age)
-//	if age >= 18 {
-//		fmt.Println("yes")
-//	}	else {
-//		fmt.Println("no")
-//	}
-//}
+////	fmt.Println(2&3)
+////	fmt.Println(2|3)
+////	fmt.Println(-2^2)
+////}
 
-//import (
-//	"fmt"
-//)
-//
-//func main() {
-//	var age int
-//	fmt.Println("input your age:")
-//	fmt.Scanln(&age)
-//	if age >= 30 {
-//		fmt.Println("you are old!")
-//	}	else if 18 < age && age < 30 {
-//		fmt.Println("you are young!")
-//	}	else {
-//		fmt.Println("you are small!")
-//	}
-//}
+import "fmt"
 
-//import "fmt"
-//
-//func main() {
-//	var month int
-//	var age int
-//	fmt.Println("input your month:")
-//	fmt.Scanln(&month)
-//	fmt.Println("input age")
-//	fmt.Scanln(&age)
-//	if month <= 0 ||  month >12{
-//		fmt.Println("month error!")
-//	}	else if 4 <= month && month <= 10 && age > 60{
-//		fmt.Println(60/3)
-//	}	else if 4 <= month && month <= 10 && age < 18 {
-//		fmt.Println(60*2)
-//	}	else if 4 <= month && month <= 10 && 18 < age && age < 60 {
-//		fmt.Println(60)
-//	}	else if 18< age && age < 60 {
-//		fmt.Println(40)
-//	}	else {
-//		fmt.Println(20)
-//	}
-//}
+func main() {
+	var age int = 18
+	fmt.Println("input your age：")
+	fmt.Scanln(&age)
+	if age >= 18 {
+		fmt.Println("yes")
+	}	else {
+		print("no")
+	}
+}
 
-//import (
-//	"fmt"
-//)
-//func main() {
-//	var key byte
-//	fmt.Println("input a|b|c|d|e|f|g:")
-//	fmt.Scanf("%c",&key)
-//	switch key {
-//	case 'a':
-//		fmt.Println(1)
-//	case 'b':
-//		fmt.Println(2)
-//	case 'c':
-//		fmt.Println(3)
-//	case 'd':
-//		fmt.Println(4)
-//	case 'e':
-//		fmt.Println(5)
-//	case 'f':
-//		fmt.Println(6)
-//	case 'g':
-//		fmt.Println(7)
-//	default:
-//		fmt.Println("input error!")
-//	}
-//}
 
-//import (
-//	"fmt"
-//)
-//
-//func main() {
-//	var zimu byte
-//	fmt.Println("input:")
-//	fmt.Scanf("%c",&zimu)
-//	switch zimu {
-//	case 'a':
-//		fmt.Println("A")
-//	case 'b':
-//		fmt.Println("B")
-//	case 'c':
-//		fmt.Println("C")
-//	default:
-//		fmt.Println("other")
-//	}
-//}
 
-//import "fmt"
-//
-//func main() {
-//	var grade float64
-//	fmt.Println("input grade:")
-//	fmt.Scanln(&grade)
-//	switch float64(grade) {
-//	case grade > 100:
-//		fmt.Println("error")
-//	case grade > 60:
-//		fmt.Println("hege")
-//	case grade < 60:
-//		fmt.Println("buhege")
-//	}
-//}
 
-//func main() {
-//	var month int
-//	fmt.Println("input:")
-//	fmt.Scanln(&month)
-//	switch month {
-//	case 3, 4, 5:
-//		fmt.Println("chun")
-//	case 6, 7, 8:
-//		fmt.Println("xia")
-//	case 9,10,11:
-//		fmt.Println("qiu")
-//	case 12,1,2:
-//		fmt.Println("dong")
-//	default:
-//		fmt.Println("error")
-//	}
-//}
 
-//for 循环
 
-//import "fmt"
-//func main() {
-//	for i := 1; i <= 10; i++ {
-//		fmt.Println("@@@@@@@@@@@@@@@@",i)
-//	}
-//}
 
-//func main() {
-//	for i := 1; i <= 10; {
-//		fmt.Println("@@@@@@@@@@@@@@@@",i)
-//		i++
-//	}
-//}
 
-//import "fmt"
-//func main() {
-//	k := 1
-//	for {
-//		if k <=10 {
-//			fmt.Printf("ok\n",k)
-//		}else	{
-//			break
-//		}
-//		k++
-//	}
-//}
 
-//import "fmt"
-//var word string = "hello world"
-//
-//func main() {
-//	for i:=0;i<len(word);i++ {
-//		fmt.Printf("%c\n",word[i])
-//	}
-//}
 
-//import "fmt"
-//
-//func main() {
-//	i:=1
-//	j:=0
-//	for {
-//		if i <= 100 && i%9 == 0 {
-//			fmt.Println(i)
-//			j += i
-//		}
-//		i++
-//	}
-//	fmt.Println(j)
-//} //error
 
-//import "fmt"
-//func main() {
-//	var max int64 = 100
-//	var count int64 = 0
-//	var sum int64 = 0
-//	var i int64 = 1
-//	for ; i <= max; i++ {
-//		if i%9 == 0 {
-//			count++
-//			sum+=i
-//			fmt.Println(i)
-//		}
-//	}
-//	fmt.Printf("%V%V",count,sum)
-//}
 
-//func main() {
-//	i:=0
-//	j:=6
-//	for {
-//		if i <= 6 && 0 <= j	 {
-//			fmt.Println(i ,"+",j,"=",i+j)
-//			i++
-//			j--
-//		}else {
-//				break
-//		}
-//	}
-//}
 
-//import "fmt"
-//func main() {
-//	fmt.Println("hello world")
-//}
 
-//import "fmt"
-//
-//func main() {
-//	for i:=1;i<6;i++ {
-//		for j:=1;j<=i;j++ {
-//			fmt.Print("*")
-//		}
-//		fmt.Println()
-//	}
-//}
 
-//import "fmt"
-//
-//func main() {
-//	for i:=1;i<=9 ;i++  {
-//		for j:=1;j<=i ;j++  {
-//			fmt.Printf("%v*%v=%v\t",j,i,i*j)
-//		}
-//		fmt.Println()
-//	}
-//}
 
-//import (
-//	"fmt"
-//	"math/rand"
-//	"time"
-//)
-//func main() {
-//	i := 0
-//	for {
-//		rand.Seed(time.Now().UnixNano())
-//		n := rand.Intn(100)+1
-//		i++
-//		fmt.Println(i,n)
-//		if n == 99 {
-//			fmt.Printf("%v",i)
-//			break
-//		}
-//	}
-//}
 
-//import (
-//	"fmt"
-//	"math/rand"
-//	"time"
-//)
-//func main() {
-//	rand.Seed(time.Now().UnixNano())
-//	n := rand.Intn(100)+1
-//	m := rand.Intn(100)+1
-//	fmt.Println(n,m)
-//}
 
-//import "fmt"	//打印100以内的奇数
-//func main() {
-//	for i := 1; i <= 100; i++ {
-//		if i%2 == 0 {
-//			continue
-//		}
-//		fmt.Println(i)
-//	}
-//}
-
-//import "fmt"
-//
-//func main() {
-//	var num int
-//	fmt.Println("input:")
-//	fmt.Scanln(&num)
-//	for  {
-//		if num > 0 {
-//			fmt.Println("yes")
-//			break
-//		}	else if num<0  {
-//			fmt.Println("no")
-//			break
-//		}else {
-//			continue
-//		}
-//	}
-//}
-
-//import (
-//	"fmt"
-//)
-//func main()  {
-//	var num float64 = 1000000000
-//	var count int = 0
-//	for  {
-//		if num > 50000  {
-//			num -= num*0.05
-//			count++
-//			continue
-//		}else if num <=50000 && num > 1000{
-//				num -= 1000
-//				count++
-//				continue
-//		}
-//		fmt.Println(num,count)
-//		break
-//	}
-//}
