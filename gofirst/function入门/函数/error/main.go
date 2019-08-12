@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 //func test()  {
 //	defer func() {
 //		err := recover()
@@ -65,9 +63,47 @@ func main() {
 */
 
 //for-range结构遍历
-func main() {
-	var shuzu [10]int = [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	for index, value := range shuzu {
-		fmt.Println(index, value)
-	}
-}
+//func main() {
+//	var shuzu [10]int = [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+//	for index, value := range shuzu {
+//		fmt.Println(index, value)
+//	}
+//}
+
+//冒泡排序
+//func main() {
+//	slice := []int{69,24,80,57,55,45}
+//	for i := (len(slice) - 1); i > 0; i-- {
+//		for i := 0; i < (len(slice) - 1); i++ { //长度为n的数组，两数直接比较n-1次，此层循环一次最大数会被排到最后，再次循环时最大数(排最后的数)
+//		// 无需再参与比较，因此此层循环一次，上层循环减少一次，上层则使用i--
+//			if slice[i] > slice[i+1] { //如果第一个数大于第二个数则交换它们的位置，否则不做交换，各自等于原来的值(以下6行)
+//				t := slice[i+1]
+//				slice[i+1] = slice[i]
+//				slice[i] = t
+//			} else {
+//				slice[i] = slice[i]
+//				slice[i+1] = slice[i+1]
+//			}
+//		}
+//	}
+//	fmt.Println(slice)
+//}
+
+//func mp(arr *[10]int) {
+//		for j := (len(*arr) - 1); j > 0; j-- {
+//			for i := 0; i < (len(*arr) - 1); i++ { //长度为n的数组，两数直接比较n-1次，此层循环一次最大数会被排到最后，再次循环时最大数(排最后的数)
+//			// 无需再参与比较，因此此层循环一次，上层循环减少一次，上层则使用i--
+//				if (*arr)[i] > (*arr)[i+1] { //如果第一个数大于第二个数则交换它们的位置，否则不做交换，各自等于原来的值(以下6行)
+//					t := (*arr)[i+1]
+//					(*arr)[i+1] = (*arr)[i]
+//					(*arr)[i] = t
+//				}
+//			}
+//		}
+//	}
+//
+//func main() {
+//	arr := [10]int{69,24,80,57,55,45,65,24,58,12}
+//	mp(&arr)
+//	fmt.Println(arr)
+//}
