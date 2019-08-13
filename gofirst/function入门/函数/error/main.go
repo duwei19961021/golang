@@ -189,5 +189,80 @@ func main() {
 	//	"name2" : "bb",
 	//}
 	//fmt.Println(name)
+	/*
+		studentMap := make(map[string]map[string]string)
+		studentMap["stu1"] = make(map[string]string,3)
+		studentMap["stu1"]["name"] = "tom"
+		studentMap["stu1"]["sex"] = "man"
+
+		studentMap["stu2"] = make(map[string]string,3)
+		studentMap["stu2"]["name"] = "alice"
+		studentMap["stu2"]["sex"] = "woman"
+		fmt.Println(studentMap) //统计key，value
+		//fmt.Println(len(studentMap))
+		fmt.Println(studentMap["stu1"])
+		fmt.Println(studentMap["stu1"]["name"])
+		fmt.Println(studentMap["stu1"]["sex"])
+	*/
+	//map增删改查
+	/*
+		studentMap["stu2"]["name"] = "alice~" //若key已存在则是修改
+		fmt.Println(studentMap)
+		studentMap["stu2"]["address"] = "hz" //若key不存在则是增加
+		fmt.Println(studentMap)
+		delete(studentMap["stu2"],"address") //删除key，如删除的key也不会报错=不操作
+		fmt.Println(studentMap)
+		val,ok := studentMap["stu1"]
+		if ok {
+			fmt.Println("y",val)
+		}else {
+			fmt.Println("n")
+		}
+	*/
+	//删除map
+	//①遍历，逐个删除
+	//②make一个新的空间，原来的内存会被gc回收
+	/*
+		studentMap = make(map[string]map[string]string)
+		fmt.Println(studentMap)
+	*/
+	//遍历map
+	/*
+		for _,value := range studentMap{
+			for key1,value1 := range value{
+				fmt.Println(key1,value1)
+			}
+		}
+	*/
+
+	//map切片
+	var monster []map[string]string
+	monster = make([]map[string]string, 2) //容量为2
+	if monster[0] == nil {
+		monster[0] = make(map[string]string, 2)
+		monster[0]["name"] = "m1"
+		monster[0]["age"] = "18"
+	}
+	if monster[1] == nil {
+		monster[1] = make(map[string]string, 2)
+		monster[1]["name"] = "m2"
+		monster[1]["age"] = "19"
+	}
+
+	//if monster[2] == nil {	//越界了，不合法，报错
+	//	monster[2] = make(map[string]string,2)
+	//	monster[2]["name"] = "m3"
+	//	monster[2]["age"] = "20"
+	//}
+
+	//使用切片的append函数，动态增加。
+	/*
+		newmonster := map[string]string{
+			"name" : "m3",
+			"age" : "21",
+		}
+		monster = append(monster,newmonster)
+		fmt.Println(monster)
+	*/
 
 }
