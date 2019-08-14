@@ -378,33 +378,15 @@ func main() {
 ////	fmt.Println(-2^2)
 ////}
 
-import "fmt"
-
-func main() {
-	var age int = 18
-	fmt.Println("input your age：")
-	fmt.Scanln(&age)
-	if age >= 18 {
-		fmt.Println("yes")
-	}	else {
-		print("no")
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//import "fmt"
+//
+//func main() {
+//	var age int = 18
+//	fmt.Println("input your age：")
+//	fmt.Scanln(&age)
+//	if age >= 18 {
+//		fmt.Println("yes")
+//	}	else {
+//		print("no")
+//	}
+//}
