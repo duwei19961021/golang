@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 //import "fmt"
 
 ////结构体创建
@@ -34,37 +30,63 @@ import (
 
 //方法
 
-type Person struct {
-	Name string
-}
+//type Person struct {
+//	Name string
+//}
+//
+//func (p Person) test() {
+//	fmt.Println("test()", p.Name)
+//}
+//
+//func (p Person) speak() {
+//	fmt.Println("sepak")
+//}
+//
+//func (p Person) jisuan(num1 int, num2 int) {
+//	sum := 0
+//	for i := num1; i <= num2; i++ {
+//		sum += i
+//	}
+//	fmt.Println(sum)
+//}
+//
+//func (p Person) getsum(a int, b int) int {
+//	sum := a + b
+//	return sum
+//}
+//
+//func main() {
+//	var p Person
+//	p.Name = "duwei"
+//	p.test()
+//	p.speak()
+//	p.jisuan(1, 1651)
+//	res := p.getsum(10, 100)
+//	fmt.Println(res)
+//}
 
-func (p Person) test() {
-	fmt.Println("test()", p.Name)
-}
+//type Bank struct {
+//	Numbersystem int64
+//	Pwd int
+//	Balances int64
+//}
+//
+//func (account *Bank) Deposite(money float64,pwd int) {
+//	if pwd != account.Pwd {
+//		fmt.Println("error password")
+//		return
+//	}
+//	if account.Balances <= 0 {
+//		fmt.Println("your balances is not enough")
+//	}
+//}
+//
+//func main() {
+//	var Ac Bank
+//	Ac.Pwd = 1234
+//	Ac.Balances = 0
+//	Ac.Deposite(0,123)
+//}
 
-func (p Person) speak() {
-	fmt.Println("sepak")
-}
-
-func (p Person) jisuan(num1 int, num2 int) {
-	sum := 0
-	for i := num1; i <= num2; i++ {
-		sum += i
-	}
-	fmt.Println(sum)
-}
-
-func (p Person) getsum(a int, b int) int {
-	sum := a + b
-	return sum
-}
-
-func main() {
-	var p Person
-	p.Name = "duwei"
-	p.test()
-	p.speak()
-	p.jisuan(1, 1651)
-	res := p.getsum(10, 100)
-	fmt.Println(res)
-}
+//三大特性
+//207
