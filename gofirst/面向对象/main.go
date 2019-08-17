@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 //
 //import "fmt"
 //
@@ -124,31 +122,114 @@ import "fmt"
 //	return result
 //}
 
-type Visitor struct {
+//type Visitor struct {
+//	Name string
+//	Age  int
+//}
+
+//func (vi *Visitor) Echo() {
+//	fmt.Println("input your name:")
+//	fmt.Scanln(&vi.Name)
+//	fmt.Println("input your age:")
+//	fmt.Scanln(&vi.Age)
+//	if (*vi).Age > 18 {
+//		fmt.Println("price=20")
+//	} else {
+//		fmt.Println("price=0")
+//	}
+//}
+
+//func main() {
+//	//var Echo Calculator
+//	//var n1 float64 = 90
+//	//var n2 float64  = 10
+//	//var operator uint8 = '/'
+//	//res := Echo.cal(float64(90),float64(10),uint8('/'))
+//	//fmt.Println(res)
+//	var tor Visitor
+//	tor.Age = 19
+//	tor.Echo()
+//}
+
+//方法、函数
+//函数，函数是指针类型时只能传递地址，是值类型时只能传递值
+/*
+type Stu struct {
 	Name string
-	Age  int
+	age int
+	hoby string
 }
 
-func (vi *Visitor) Echo() {
-	fmt.Println("input your name:")
-	fmt.Scanln(&vi.Name)
-	fmt.Println("input your age:")
-	fmt.Scanln(&vi.Age)
-	if (*vi).Age > 18 {
-		fmt.Println("price=20")
-	} else {
-		fmt.Println("price=0")
-	}
+func test01(p Stu)  {
+	fmt.Println(p.Name)
+}
+func test02(p *Stu)  {
+	fmt.Println(p.Name)
+}
+func (p Stu) test03() {
+	fmt.Println(p.Name)
+}
+func (p *Stu) test04() {
+	(*p).Name = "dw2"
 }
 
 func main() {
-	//var Echo Calculator
-	//var n1 float64 = 90
-	//var n2 float64  = 10
-	//var operator uint8 = '/'
-	//res := Echo.cal(float64(90),float64(10),uint8('/'))
-	//fmt.Println(res)
-	var tor Visitor
-	tor.Age = 19
-	tor.Echo()
+	var p Stu
+	p.Name = "d2"
+	test01(p)
+	test02(&p)
+	p.test03()
+	(&p).test03()
+	(&p).test04()
+	fmt.Println(p.Name)
+}
+*/
+
+//构建方法
+/*
+type Stu struct {
+	Name string
+	Age int
+	Hobby string
+}
+
+func (S Stu) name()  {
+	fmt.Println(S.Name)
+}
+func (S *Stu) age() {
+	S.Age = 20
+	fmt.Println((*S).Age)
+}
+
+func main() {
+	var S Stu = Stu{
+		Name:  "dw",
+		Age:   20,
+		Hobby: "wu",
+	}
+	var S Stu = Stu{"duwei",23,"wu"}
+	S.name()
+	(&S).age()
+	fmt.Println(S.Name)
+	fmt.Println(S.Age)
+}
+*/
+import (
+	"fmt"
+	"model"
+)
+
+func main() {
+	//p := model.NewPerson("duwei")
+	//p.SetAge(23)
+	//p.SetSal(500)
+	//fmt.Println(p.GetSal())
+	//fmt.Println(p.GetAge())
+	//fmt.Println(p.Name)
+
+	p := model.Newaccount("duwei")
+	p.SetAccount("duweia")
+	p.Getbalance()
+	fmt.Println(p.User)
+	fmt.Println(p.Getbalance())
 }
