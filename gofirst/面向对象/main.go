@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"sort"
+)
+
 //
 //import "fmt"
 //
@@ -185,51 +191,213 @@ func main() {
 }
 */
 
-//构建方法
+//
+//func main() {
+//	p := model.NewPerson("duwei")
+//	p.SetAge(23)
+//	p.SetSal(500)
+//	fmt.Println(p.GetSal())
+//	fmt.Println(p.GetAge())
+//	fmt.Println(p.Name)
+//
+//	//p := model.Newaccount("duwei")
+//	//p.SetAccount("duweia")
+//	//p.Getbalance()
+//	//fmt.Println(p.User)
+//	//fmt.Println(p.Getbalance())
+//}
+
+//type Xiaoxuesheng struct {
+//	Name string
+//	Score float64
+//	Age int
+//}
+//
+//func (p *Xiaoxuesheng) Showinfo() {
+//	fmt.Println(p.Name,p.Age,p.Score)
+//}
+//func (p *Xiaoxuesheng) Setscore(score float64)  {
+//	p.Score = score
+//}
+//func (p *Xiaoxuesheng) testing() {
+//	fmt.Println("xiaoxuesheng testing...")
+//}
+//
+//type Daxuesheng struct {
+//	Name string
+//	Score float64
+//	Age int
+//}
+//
+//func (p *Daxuesheng) Showinfo() {
+//	fmt.Println(p.Name,p.Age,p.Score)
+//}
+//func (p *Daxuesheng) Setscore(score float64)  {
+//	p.Score = score
+//}
+//func (p *Daxuesheng) testing() {
+//	fmt.Println("Daxuesheng testing...")
+//}
+//
+//func main() {
+//	p := Xiaoxuesheng{
+//		Name:  "duwei",
+//		Score: 99.5,
+//		Age:   10,
+//	}
+//	p.Showinfo()
+//	p.Setscore(98)
+//	p.testing()
+//
+//	q := Daxuesheng{
+//		Name:  "duwei2",
+//		Score: 60,
+//		Age:   23,
+//	}
+//	q.Setscore(61)
+//	q.Showinfo()
+//	q.testing()
+//}
+
+//继承
+//语法
+//type Goods struct {
+//	Name string
+//	Price float64
+//}
+//type Book struct {
+//	Goods
+//	Author string
+//}
 /*
-type Stu struct {
+type Student struct {
 	Name string
 	Age int
-	Hobby string
+	Score float64
 }
 
-func (S Stu) name()  {
-	fmt.Println(S.Name)
+func (stu *Student) ShowInfo() {
+	fmt.Println(stu.Name,stu.Age,stu.Score)
 }
-func (S *Stu) age() {
-	S.Age = 20
-	fmt.Println((*S).Age)
+func (stu *Student) Setscore(score float64) {
+	stu.Score = score
 }
 
-func main() {
-	var S Stu = Stu{
-		Name:  "dw",
-		Age:   20,
-		Hobby: "wu",
-	}
-	var S Stu = Stu{"duwei",23,"wu"}
-	S.name()
-	(&S).age()
-	fmt.Println(S.Name)
-	fmt.Println(S.Age)
+type Xiaoxuesheng struct {
+	Student
+}
+
+func (p *Xiaoxuesheng) testing() { //此结构体特有方法
+	fmt.Println("xiaoxuesheng testing...")
+}
+
+type Daxuesheng struct {
+	Student
+}
+
+func (p *Daxuesheng) testing() {
+	fmt.Println("Daxuesheng testing...")
+}
+
+func main()  {
+	st := Xiaoxuesheng{}
+	st.Student.Name = "yulushen"
+	st.Student.Age = 9
+	st.Student.Setscore(59)
+	st.testing()
+	st.Student.ShowInfo()
+
+	dst := Daxuesheng{}
+	dst.Student.Name = "duwei"
+	dst.Student.Age = 23
+	dst.Student.Setscore(100)
+	dst.testing()
+	dst.Student.ShowInfo()
 }
 */
-import (
-	"fmt"
-	"model"
-)
+//结构体可以使用匿名结构体中的所有字段和方法
+
+//接口
+/*
+type Usb interface {
+	Start()
+	Stop( )
+}
+
+type Phone struct {
+
+}
+func (p Phone) Start() {
+	fmt.Println("Phone start...")
+}
+func (p Phone) Stop() {
+	fmt.Println("Phone stop...")
+}
+
+type Camera struct {
+
+}
+func (c Camera) Start() {
+	fmt.Println("Camera start...")
+}
+func (c Camera) Stop() {
+	fmt.Println("Camera stop...")
+}
+
+type Computer struct {
+
+}
+
+func (com Computer) working(usb Usb) {
+	usb.Start()
+	usb.Stop()
+}
 
 func main() {
-	//p := model.NewPerson("duwei")
-	//p.SetAge(23)
-	//p.SetSal(500)
-	//fmt.Println(p.GetSal())
-	//fmt.Println(p.GetAge())
-	//fmt.Println(p.Name)
+	com := Computer{}
+	pho := Phone{}
+	cam := Camera{}
+	com.working(pho)
+	com.working(cam)
+}
+*/
 
-	p := model.Newaccount("duwei")
-	p.SetAccount("duweia")
-	p.Getbalance()
-	fmt.Println(p.User)
-	fmt.Println(p.Getbalance())
+//切片排序(sort 接口)
+type Student struct {
+	Name  string
+	Age   int
+	Score int
+}
+
+type stuslice []Student
+
+func (ss stuslice) Len() int {
+	return len(ss)
+}
+func (ss stuslice) Less(i, j int) bool {
+	//return ss[i].Age < ss[j].Age
+	return ss[i].Score < ss[j].Score
+}
+func (ss stuslice) Swap(i, j int) {
+	ss[i], ss[j] = ss[j], ss[i]
+}
+
+func main() {
+	var stu1 stuslice
+	for i := 0; i < 10; i++ {
+		sn := Student{
+			Name:  fmt.Sprintf("duwei%d", rand.Intn(100)),
+			Age:   rand.Intn(100),
+			Score: rand.Intn(100),
+		}
+		stu1 = append(stu1, sn)
+	}
+	for _, v := range stu1 {
+		fmt.Println(v)
+	}
+	fmt.Println("-----------------------------------------------")
+	sort.Sort(stu1)
+	for _, v := range stu1 {
+		fmt.Println(v)
+	}
 }
