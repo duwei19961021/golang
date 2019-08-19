@@ -170,72 +170,73 @@ func main() {
 //}
 
 //map使用
-func main() {
+//func main() {
 
-	//var a map[string]string
-	//a = make(map[string]string,10) //不写空间默认为1
-	//a["name"] = "dw"
-	//fmt.Println(a)
+//var a map[string]string
+//a = make(map[string]string,10) //不写空间默认为1
+//a["name"] = "dw"
+//fmt.Println(a)
 
-	//cities := make(map[string]string) //容量自增涨，无需定义
-	//cities["city1"] = "hz"
-	//cities["city2"] = "hz"
-	//cities["city3"] = "hz"
-	//cities["city4"] = "hz"
-	//fmt.Println(cities)
+//cities := make(map[string]string) //容量自增涨，无需定义
+//cities["city1"] = "hz"
+//cities["city2"] = "hz"
+//cities["city3"] = "hz"
+//cities["city4"] = "hz"
+//fmt.Println(cities)
 
-	//name := map[string]string{
-	//	"name1" : "aa",
-	//	"name2" : "bb",
-	//}
-	//fmt.Println(name)
-	/*
-		studentMap := make(map[string]map[string]string)
-		studentMap["stu1"] = make(map[string]string,3)
-		studentMap["stu1"]["name"] = "tom"
-		studentMap["stu1"]["sex"] = "man"
+//name := map[string]string{
+//	"name1" : "aa",
+//	"name2" : "bb",
+//}
+//fmt.Println(name)
+/*
+	studentMap := make(map[string]map[string]string)
+	studentMap["stu1"] = make(map[string]string,3)
+	studentMap["stu1"]["name"] = "tom"
+	studentMap["stu1"]["sex"] = "man"
 
-		studentMap["stu2"] = make(map[string]string,3)
-		studentMap["stu2"]["name"] = "alice"
-		studentMap["stu2"]["sex"] = "woman"
-		fmt.Println(studentMap) //统计key，value
-		//fmt.Println(len(studentMap))
-		fmt.Println(studentMap["stu1"])
-		fmt.Println(studentMap["stu1"]["name"])
-		fmt.Println(studentMap["stu1"]["sex"])
-	*/
-	//map增删改查
-	/*
-		studentMap["stu2"]["name"] = "alice~" //若key已存在则是修改
-		fmt.Println(studentMap)
-		studentMap["stu2"]["address"] = "hz" //若key不存在则是增加
-		fmt.Println(studentMap)
-		delete(studentMap["stu2"],"address") //删除key，如删除的key也不会报错=不操作
-		fmt.Println(studentMap)
-		val,ok := studentMap["stu1"]
-		if ok {
-			fmt.Println("y",val)
-		}else {
-			fmt.Println("n")
+	studentMap["stu2"] = make(map[string]string,3)
+	studentMap["stu2"]["name"] = "alice"
+	studentMap["stu2"]["sex"] = "woman"
+	fmt.Println(studentMap) //统计key，value
+	//fmt.Println(len(studentMap))
+	fmt.Println(studentMap["stu1"])
+	fmt.Println(studentMap["stu1"]["name"])
+	fmt.Println(studentMap["stu1"]["sex"])
+*/
+//map增删改查
+/*
+	studentMap["stu2"]["name"] = "alice~" //若key已存在则是修改
+	fmt.Println(studentMap)
+	studentMap["stu2"]["address"] = "hz" //若key不存在则是增加
+	fmt.Println(studentMap)
+	delete(studentMap["stu2"],"address") //删除key，如删除的key也不会报错=不操作
+	fmt.Println(studentMap)
+	val,ok := studentMap["stu1"]
+	if ok {
+		fmt.Println("y",val)
+	}else {
+		fmt.Println("n")
+	}
+*/
+//删除map
+//①遍历，逐个删除
+//②make一个新的空间，原来的内存会被gc回收
+/*
+	studentMap = make(map[string]map[string]string)
+	fmt.Println(studentMap)
+*/
+//遍历map
+/*
+	for _,value := range studentMap{
+		for key1,value1 := range value{
+			fmt.Println(key1,value1)
 		}
-	*/
-	//删除map
-	//①遍历，逐个删除
-	//②make一个新的空间，原来的内存会被gc回收
-	/*
-		studentMap = make(map[string]map[string]string)
-		fmt.Println(studentMap)
-	*/
-	//遍历map
-	/*
-		for _,value := range studentMap{
-			for key1,value1 := range value{
-				fmt.Println(key1,value1)
-			}
-		}
-	*/
+	}
+*/
 
-	//map切片
+//map切片
+/*
 	var monster []map[string]string
 	monster = make([]map[string]string, 2) //容量为2
 	if monster[0] == nil {
@@ -248,21 +249,39 @@ func main() {
 		monster[1]["name"] = "m2"
 		monster[1]["age"] = "19"
 	}
+*/
 
-	//if monster[2] == nil {	//越界了，不合法，报错
-	//	monster[2] = make(map[string]string,2)
-	//	monster[2]["name"] = "m3"
-	//	monster[2]["age"] = "20"
-	//}
+//if monster[2] == nil {	//越界了，不合法，报错
+//	monster[2] = make(map[string]string,2)
+//	monster[2]["name"] = "m3"
+//	monster[2]["age"] = "20"
+//}
 
-	//使用切片的append函数，动态增加。
-	/*
-		newmonster := map[string]string{
-			"name" : "m3",
-			"age" : "21",
-		}
-		monster = append(monster,newmonster)
-		fmt.Println(monster)
-	*/
+//使用切片的append函数，动态增加。
+/*
+	newmonster := map[string]string{
+		"name" : "m3",
+		"age" : "21",
+	}
+	monster = append(monster,newmonster)
+	fmt.Println(monster)
+*/
 
-}
+//}
+
+//面向对象，struct结构体
+//type Cat struct {
+//	Name string
+//	Age int
+//	Color string
+//	Story map[string]string
+//}
+//func main() {
+//	var cat1 Cat
+//	cat1.Name = "dw"
+//	cat1.Age = 3
+//	cat1.Color = "white"
+//	cat1.Story = make(map[string]string)
+//	cat1.Story["a"] = "b"
+//	fmt.Println(cat1,cat1.Name,cat1.Age,cat1.Color)
+//}
