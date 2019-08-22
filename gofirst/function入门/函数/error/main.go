@@ -269,19 +269,173 @@ func main() {
 
 //}
 
-//面向对象，struct结构体
-//type Cat struct {
-//	Name string
-//	Age int
-//	Color string
-//	Story map[string]string
-//}
 //func main() {
-//	var cat1 Cat
-//	cat1.Name = "dw"
-//	cat1.Age = 3
-//	cat1.Color = "white"
-//	cat1.Story = make(map[string]string)
-//	cat1.Story["a"] = "b"
-//	fmt.Println(cat1,cat1.Name,cat1.Age,cat1.Color)
+//	file,err := os.Open("C:\\Users\\x1c\\GolandProjects\\golang\\gofirst\\function入门\\函数\\error\\a.txt")
+//	fmt.Println(*file,err)
+//	file.Close()
 //}
+
+//读文件1
+/*
+func main() {
+	file,err :=os.Open("C:\\Users\\x1c\\GolandProjects\\golang\\gofirst\\function入门\\函数\\error\\a.txt")
+	if err != nil{
+		fmt.Println(err)
+	}
+	defer file.Close()
+	reader := bufio.NewReader(file)
+	for {
+		str, err := reader.ReadString('\n')
+		if err == io.EOF{
+			break
+		}
+		fmt.Print(str)
+	}
+}
+*/
+
+/*
+func main() {
+	filePath := "d:/golang.txt"
+	file,err := os.OpenFile(filePath, os.O_WRONLY | os.O_CREATE|os.O_APPEND,0777)
+	if err != nil{
+		fmt.Println(err)
+		return
+	}
+	defer file.Close()
+	str := "hello world!\n"
+	writer := bufio.NewWriter(file)
+	for i:=0;i<5;i++{
+		writer.WriteString(str)
+	}
+	writer.Flush()
+}
+*/
+
+/*
+func main()  {
+	oldfilePath := "d:/send.txt"
+	newfilePath := "d:/accept.txt"
+	file, err := os.OpenFile(oldfilePath,os.O_RDONLY,0777)
+	if err != nil{
+		fmt.Println(err)
+	}
+	defer file.Close()
+	reader := bufio.NewReader(file)
+	for {
+		str, err := reader.ReadString('\n')
+		if err == io.EOF{
+			break
+		}
+		fmt.Print(str)
+		file,err := os.OpenFile(newfilePath,os.O_RDWR|os.O_APPEND,0777)
+		if err != nil {
+			fmt.Println(err)
+		}
+		writer := bufio.NewWriter(file)
+		writer.WriteString(str)
+		writer.Flush()
+	}
+}
+*/
+
+/*
+var count struct{
+	zimucount int
+	shuzicount int
+	spacecount int
+	othercount int
+}
+
+func main() {
+		filePath := "d:\\send.txt"
+		file, err := os.Open(filePath)
+		if err != nil{
+			fmt.Println(err)
+		}
+		defer file.Close()
+		reader := bufio.NewReader(file)
+		for {
+			str,err := reader.ReadString('\n')
+			if err == io.EOF{
+				break
+			}
+			for _,v := range str{
+				switch  {
+				case v >= 'a' && v <='z' :
+					count.zimucount++
+				case v >= 'A' && v <= 'Z':
+					count.zimucount++
+				case v == ' ' || v == '\t':
+					count.spacecount++
+				case v >='0' && v <= '9':
+					count.shuzicount++
+				default:
+					count.othercount++
+				}
+			}
+		}
+		fmt.Printf("zimu:%v\n",count.zimucount)
+		fmt.Printf("shuzi:%v\n",count.shuzicount)
+		fmt.Printf("space:%v\n",count.spacecount)
+		fmt.Printf("other:%v\n",count.othercount)
+}
+*/
+
+/*
+func main() {
+	fmt.Println(len(os.Args))
+	for i,v := range os.Args{
+		fmt.Printf("args[%v]=%v\n",i,v)
+	}
+}
+*/
+
+//命令行参数
+/*
+func main() {
+	var user string
+	var pwd string
+	var host string
+	var port int
+
+	flag.StringVar(&user,"u","","用户名")
+	flag.StringVar(&pwd,"pwd","","密码")
+	flag.StringVar(&host,"h","","主机")
+	flag.IntVar(&port,"p",3306,"用户名")
+	flag.Parse()
+	fmt.Printf("user:%v,pwd:%v,host:%v,port:%v",user,pwd,host,port)
+}
+*/
+
+//序列化
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type Monster struct {
+	Name    string
+	Age     int
+	Sal     float64
+	Address string
+	Skill   string
+}
+
+func test() {
+	mon := Monster{
+		Name:    "duwei",
+		Age:     23,
+		Sal:     1000,
+		Address: "hunan",
+		Skill:   "wu",
+	}
+	data, err := json.Marshal(&mon)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(string(data))
+}
+func main() {
+	test()
+}
